@@ -66,7 +66,7 @@ void init(Handle<Object> target)
   Nan::SetMethod(target, "getProgramParameter", webgl::GetProgramParameter);
   Nan::SetMethod(target, "getUniformLocation", webgl::GetUniformLocation);
   Nan::SetMethod(target, "clearColor", webgl::ClearColor);
-  Nan::SetMethod(target, "clearDepth", webgl::ClearDepth);
+  // Nan::SetMethod(target, "clearDepth", webgl::ClearDepth);
 
   Nan::SetMethod(target, "disable", webgl::Disable);
   Nan::SetMethod(target, "createTexture", webgl::CreateTexture);

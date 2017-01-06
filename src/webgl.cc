@@ -588,15 +588,15 @@ NAN_METHOD(ClearColor) {
 }
 
 
-NAN_METHOD(ClearDepth) {
-  Nan::HandleScope scope;
+// NAN_METHOD(ClearDepth) {
+//   Nan::HandleScope scope;
 
-  float depth = (float) info[0]->NumberValue();
+//   float depth = (float) info[0]->NumberValue();
 
-  glClearDepth(depth);
+//   glClearDepth(depth);
 
-  info.GetReturnValue().Set(Nan::Undefined());
-}
+//   info.GetReturnValue().Set(Nan::Undefined());
+// }
 
 NAN_METHOD(Disable) {
   Nan::HandleScope scope;
