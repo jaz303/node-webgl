@@ -9,7 +9,7 @@
     "opengl"
   ],
   "engines": {
-    "node": ">=0.7.0"
+    "node": ">=7.0.0"
   },
   "directories": {
     "src": "src",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikeseven/node-webgl.git"
+    "url": "https://github.com/jaz303/node-webgl.git"
   },
   "scripts": {
     "install": "node-gyp rebuild"
@@ -28,7 +28,6 @@
   "license" : "BSD-3-Clause",
   "dependencies": {
     "bindings": "^1.2.1",
-    "nan": "^2.1.0",
-    "node-glfw": ">=0.4.0"
+    "nan": "^2.1.0"
   }
 }
