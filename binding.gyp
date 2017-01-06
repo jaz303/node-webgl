@@ -18,47 +18,14 @@
           'src/webgl.cc',
       ],
       'include_dirs': [
-        "<!(node -e \"require('nan')\")",
-        '<(module_root_dir)/deps/include',
+        "<!(node -e \"require('nan')\")"
       ],
       'conditions': [
-        ['OS=="mac"',
+        ['OS=="linux"',
           {
-            'libraries': ['-lGLEW','-framework OpenGL'],
-            'include_dirs': ['/usr/local/include'],
-            'library_dirs': ['/usr/local/lib'],
-          }
-        ],
-        ['OS=="linux"', {
-          'libraries': [
-            '-lGLEW','-lGL']
-          }
-        ],
-        ['OS=="win"',
-          {
-            'include_dirs': [
-              './deps/include',
-              ],
-            'library_dirs': [
-              './deps/windows/lib/<(target_arch)',
-              ],
-            'libraries': [
-              'glew32.lib',
-              'opengl32.lib',
-              'FreeImage.lib'
-              ],
-            'defines' : [
-              'WIN32_LEAN_AND_MEAN',
-              'VC_EXTRALEAN'
-            ],
-            'msvs_settings' : {
-              'VCCLCompilerTool' : {
-                'AdditionalOptions' : ['/O2','/Oy','/GL','/GF','/Gm-','/EHsc','/MT','/GS','/Gy','/GR-','/Gd']
-              },
-              'VCLinkerTool' : {
-                'AdditionalOptions' : ['/OPT:REF','/OPT:ICF','/LTCG']
-              },
-            },
+            'libraries': ['-lGLESv2'],
+            'include_dirs': ['/opt/vc/include'],
+            'library_dirs': ['/opt/vc/lib']
           }
         ],
       ],
