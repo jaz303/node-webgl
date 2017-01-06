@@ -5,7 +5,10 @@
 #include "webgl.h"
 #include <node.h>
 #include <node_buffer.h>
-// #include <GL/glew.h>
+
+#ifdef USE_GLEW
+#include <GL/glew.h>
+#endif
 
 #ifdef _WIN32
   #define  strcasestr(s, t) strstr(strupr(s), strupr(t))
@@ -82,6 +85,8 @@ inline void *getImageData(Local<Value> arg) {
 
 NAN_METHOD(Init) {
   Nan::HandleScope scope;
+
+#ifdef USE_GLEW
   GLenum err = glewInit();
   if (GLEW_OK != err)
   {
@@ -91,7 +96,10 @@ NAN_METHOD(Init) {
   }else{
     //fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
     info.GetReturnValue().Set(JS_INT(0));  
-  } 
+  }
+#else
+  info.GetReturnValue().Set(JS_INT(0));  
+#endif
   
 }
 
