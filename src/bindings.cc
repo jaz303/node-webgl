@@ -7,7 +7,6 @@
 
 
 #include "webgl.h"
-#include "image.h"
 #include <cstdlib>
 
 v8::PropertyAttribute constant_attributes = 
@@ -24,9 +23,6 @@ extern "C" {
 void init(Handle<Object> target)
 {
   atexit(webgl::AtExit);
-  atexit(Image::AtExit);
-
-  Image::Initialize(target);
 
   Nan::SetMethod(target,"Init",webgl::Init);
  

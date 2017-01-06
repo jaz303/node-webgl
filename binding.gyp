@@ -15,7 +15,6 @@
       ],
       'sources': [
           'src/bindings.cc',
-          'src/image.cc',
           'src/webgl.cc',
       ],
       'include_dirs': [
@@ -25,14 +24,14 @@
       'conditions': [
         ['OS=="mac"',
           {
-            'libraries': ['-lGLEW','-lfreeimage','-framework OpenGL'],
+            'libraries': ['-lGLEW','-framework OpenGL'],
             'include_dirs': ['/usr/local/include'],
             'library_dirs': ['/usr/local/lib'],
           }
         ],
         ['OS=="linux"', {
           'libraries': [
-            '-lfreeimage','-lGLEW','-lGL']
+            '-lGLEW','-lGL']
           }
         ],
         ['OS=="win"',

@@ -13,6 +13,9 @@
 #include <v8.h>
 #include "arch_wrapper.h"
 
+// TODO: is this ok?
+typedef uint8_t BYTE;
+
 namespace {
 #define JS_STR(...) Nan::New<v8::String>(__VA_ARGS__).ToLocalChecked()
 #define JS_INT(val) Nan::New<v8::Integer>(val)

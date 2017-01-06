@@ -3,7 +3,6 @@
 #include <iostream>
 
 #include "webgl.h"
-#include "image.h"
 #include <node.h>
 #include <node_buffer.h>
 #include <GL/glew.h>
@@ -1384,7 +1383,7 @@ NAN_METHOD(GetShaderSource) {
   glGetShaderSource(shader, len, NULL, source);
 
   Local<String> str = JS_STR(source);
-  delete source;
+  delete[] source;
 
   info.GetReturnValue().Set(str);
 }
