@@ -66,7 +66,10 @@ void init(Handle<Object> target)
   Nan::SetMethod(target, "getProgramParameter", webgl::GetProgramParameter);
   Nan::SetMethod(target, "getUniformLocation", webgl::GetUniformLocation);
   Nan::SetMethod(target, "clearColor", webgl::ClearColor);
-  // Nan::SetMethod(target, "clearDepth", webgl::ClearDepth);
+
+#ifdef NWGL_HAS_CLEAR_DEPTH
+  Nan::SetMethod(target, "clearDepth", webgl::ClearDepth);
+#endif
 
   Nan::SetMethod(target, "disable", webgl::Disable);
   Nan::SetMethod(target, "createTexture", webgl::CreateTexture);
@@ -577,8 +580,11 @@ void init(Handle<Object> target)
   JS_GL_CONSTANT(DEPTH_COMPONENT16);
   JS_GL_CONSTANT(STENCIL_INDEX);
   JS_GL_CONSTANT(STENCIL_INDEX8);
-  //JS_GL_CONSTANT(DEPTH_STENCIL);
-  //JS_GL_CONSTANT(DEPTH24_STENCIL8);
+
+#ifdef NWGL_HAS_DEPTH_STENCIL
+  JS_GL_CONSTANT(DEPTH_STENCIL);
+  JS_GL_CONSTANT(DEPTH24_STENCIL8);
+#endif
 
   JS_GL_CONSTANT(RENDERBUFFER_WIDTH);
   JS_GL_CONSTANT(RENDERBUFFER_HEIGHT);
@@ -598,7 +604,10 @@ void init(Handle<Object> target)
   JS_GL_CONSTANT(COLOR_ATTACHMENT0);
   JS_GL_CONSTANT(DEPTH_ATTACHMENT);
   JS_GL_CONSTANT(STENCIL_ATTACHMENT);
-  //JS_GL_CONSTANT(DEPTH_STENCIL_ATTACHMENT);
+
+#ifdef NWGL_HAS_DEPTH_STENCIL
+  JS_GL_CONSTANT(DEPTH_STENCIL_ATTACHMENT);
+#endif
 
   JS_GL_CONSTANT(NONE);
 
@@ -617,7 +626,7 @@ void init(Handle<Object> target)
   JS_GL_CONSTANT(INVALID_FRAMEBUFFER_OPERATION);
 
   /* WebGL-specific enums */
-  JS_GL_SET_CONSTANT( "UNPACK_FLIP_Y_WEBGL" , 0x9240);
+  JS_GL_SET_CONSTANT("UNPACK_FLIP_Y_WEBGL" , 0x9240);
   JS_GL_SET_CONSTANT("UNPACK_PREMULTIPLY_ALPHA_WEBGL" , 0x9241);
   JS_GL_SET_CONSTANT("CONTEXT_LOST_WEBGL" , 0x9242);
   JS_GL_SET_CONSTANT("UNPACK_COLORSPACE_CONVERSION_WEBGL", 0x9243);

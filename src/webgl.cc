@@ -6,7 +6,7 @@
 #include <node.h>
 #include <node_buffer.h>
 
-#ifdef USE_GLEW
+#ifdef NWGL_USE_GLEW
 #include <GL/glew.h>
 #endif
 
@@ -86,7 +86,7 @@ inline void *getImageData(Local<Value> arg) {
 NAN_METHOD(Init) {
   Nan::HandleScope scope;
 
-#ifdef USE_GLEW
+#ifdef NWGL_USE_GLEW
   GLenum err = glewInit();
   if (GLEW_OK != err)
   {
@@ -587,16 +587,19 @@ NAN_METHOD(ClearColor) {
   info.GetReturnValue().Set(Nan::Undefined());
 }
 
+#ifdef NWGL_HAS_CLEAR_DEPTH
 
-// NAN_METHOD(ClearDepth) {
-//   Nan::HandleScope scope;
+NAN_METHOD(ClearDepth) {
+  Nan::HandleScope scope;
 
-//   float depth = (float) info[0]->NumberValue();
+  float depth = (float) info[0]->NumberValue();
 
-//   glClearDepth(depth);
+  glClearDepth(depth);
 
-//   info.GetReturnValue().Set(Nan::Undefined());
-// }
+  info.GetReturnValue().Set(Nan::Undefined());
+}
+
+#endif
 
 NAN_METHOD(Disable) {
   Nan::HandleScope scope;

@@ -23,6 +23,7 @@
     "url": "https://github.com/jaz303/node-webgl.git"
   },
   "scripts": {
+    "preinstall": "node tools/copy-bindings.js",
     "install": "node-gyp rebuild"
   },
   "license" : "BSD-3-Clause",

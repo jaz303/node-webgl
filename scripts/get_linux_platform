@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ "$unamestr" != 'Linux' ]]; then
+   echo none
+   exit
+fi
+
+# This could do with being more robust...
+if [ -d /opt/vc ]; then
+	echo linux_rpi
+else
+	echo linux
+fi
