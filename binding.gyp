@@ -36,7 +36,7 @@
             'libraries': ['-lGLEW','-lGL']
           }
         ],
-        ['OS=="darwin"',
+        ['OS=="mac"',
           {
             'libraries': ['-lGLEW','-framework OpenGL'],
             'include_dirs': ['/usr/local/include'],
@@ -67,10 +67,7 @@
               'VCLinkerTool' : {
                 'AdditionalOptions' : ['/OPT:REF','/OPT:ICF','/LTCG']
               },
-            },
-            'libraries': ['-lGLESv2'],
-            'include_dirs': ['/opt/vc/include'],
-            'library_dirs': ['/opt/vc/lib']
+            }
           }
         ]
       ],
