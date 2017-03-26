@@ -263,14 +263,14 @@ void init(Handle<Object> target)
   JS_GL_CONSTANT(FRONT_AND_BACK);
 
   /* DepthFunction */
-  /*      GL_NEVER */
-  /*      GL_LESS */
-  /*      GL_EQUAL */
-  /*      GL_LEQUAL */
-  /*      GL_GREATER */
-  /*      GL_NOTEQUAL */
-  /*      GL_GEQUAL */
-  /*      GL_ALWAYS */
+  JS_GL_CONSTANT(NEVER);
+  JS_GL_CONSTANT(LESS);
+  JS_GL_CONSTANT(EQUAL);
+  JS_GL_CONSTANT(LEQUAL);
+  JS_GL_CONSTANT(GREATER);
+  JS_GL_CONSTANT(NOTEQUAL);
+  JS_GL_CONSTANT(GEQUAL);
+  JS_GL_CONSTANT(ALWAYS);
 
   /* EnableCap */
   JS_GL_CONSTANT(TEXTURE_2D);
