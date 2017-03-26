@@ -7,7 +7,7 @@ fi
 
 # This could do with being more robust...
 if [ -d /opt/vc ]; then
-	echo linux_rpi
+	echo rpi
 else
 	echo linux
 fi

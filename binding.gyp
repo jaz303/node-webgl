@@ -21,7 +21,7 @@
         "<!(node -e \"require('nan')\")"
       ],
       'conditions': [
-        ['linux_platform=="linux_rpi"',
+        ['linux_platform=="rpi"',
           {
             'defines': [
               'NWGL_RASPBERRY_PI'
