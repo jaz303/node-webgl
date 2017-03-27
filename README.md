@@ -34,6 +34,7 @@ npm install node-webgl
 	data : ArrayBufferView, // pixel data
 	pitch : number? // length of a row of pixels in bytes
 }
+```
 
 This is designed to be compatible with the browser `ImageData` interface.
 
