@@ -13,6 +13,7 @@
 
 #ifdef NWGL_RASPBERRY_PI
 	#define NWGL_GOT_PLATFORM
+	#undef NWGL_USE_GLEW
 	#undef NWGL_HAS_CLEAR_DEPTH
 	#undef NWGL_HAS_DEPTH_STENCIL
 	#include <GLES2/gl2.h>

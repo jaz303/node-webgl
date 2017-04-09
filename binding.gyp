@@ -1,7 +1,7 @@
 {
   'variables': {
     'platform': '<(OS)',
-    'linux_platform': '!(scripts/get_linux_platform)'
+    'linux_platform': '<!(scripts/get_linux_platform)'
   },
   'conditions': [
     ['platform == "mac"', {'variables': {'platform': 'darwin'}}],
